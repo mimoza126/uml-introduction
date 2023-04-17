@@ -5,13 +5,9 @@ actor 従業員 #DDDDDD;line:black;line.bold;
 rectangle 従業員登録システム{
     usecase 社員情報を参照する 
     usecase 社員情報登録する 
-    usecase 社員情報変更届を提出する 
-    usecase (<u>社員情報修正する</u>\n変更届が提出された) as input
+    usecase (<u>社員情報を修正する</u>) as input
 }
 従業員 --> 社員情報を参照する
-従業員 --> 社員情報変更届を提出する
 人事担当者--> input
 人事担当者 --> 社員情報登録する
-人事担当者 --|> 従業員
-社員情報変更届を提出する  .> input: <<extend>>
 @enduml
