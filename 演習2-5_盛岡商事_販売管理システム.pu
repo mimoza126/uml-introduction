@@ -1,0 +1,11 @@
+@startuml ユースケース図
+left to right direction
+actor 担当者 #DDDDDD;line:black;line.bold;
+rectangle 販売管理システム{
+    usecase 注文商品確認する as confirm
+    usecase 出荷状況登録する as register
+}
+担当者 --> confirm
+担当者 --> register
+
+@enduml
