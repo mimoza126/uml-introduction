@@ -1,0 +1,14 @@
+@startuml 診療記録
+left to right direction
+class 医師 {
+    + 名前
+    + 医局
+    + 診察記録
+}
+class 患者 {
+    + 名前
+    + 担当医    
+}
+
+医師 "1"-->"*" 患者:診察する 
+@enduml
