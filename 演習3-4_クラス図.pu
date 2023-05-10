@@ -1,0 +1,31 @@
+@startuml 演習3-4-2 クラス図
+class 車 {
+- 車種: String
+- メーカー: String
+- 駆動方式: String
+}
+
+class タイヤ {
+- メーカ名: String
++ setMaker(): void
+}
+
+class タイヤ1 {
+}
+
+class タイヤ2 {
+}
+
+class タイヤ3 {
+}
+
+class タイヤ4 {
+}
+
+車 "1" *-- "4" タイヤ: 搭載する
+
+hide タイヤ1 circle
+hide タイヤ2 circle
+hide タイヤ3 circle
+hide タイヤ4 circle
+@enduml

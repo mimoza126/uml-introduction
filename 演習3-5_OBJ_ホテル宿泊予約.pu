@@ -1,0 +1,30 @@
+@startuml ホテルと利用者と部屋と予約
+left to right direction
+object "<u>利用者</u>" as user {
+名前
+住所　
+部屋
+予約
+}
+object "<u>ホテル</u>" as hotel {
+部屋   
+}
+object "<u>部屋1</u>" as room301 {
+部屋番号　= 301号室
+価格
+キャンペーン価格
+}
+object "<u>部屋2</u>" as room302 {
+部屋番号　= 302号室
+価格
+キャンペーン価格
+}
+object "<u>部屋3</u>" as room303 {
+部屋番号　= 303号室
+価格
+キャンペーン価格
+}
+hotel "1"--"1" room301
+hotel "1"--"1"room302
+hotel "1"-- "1"room303
+@enduml

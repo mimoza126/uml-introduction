@@ -1,0 +1,47 @@
+@startuml 演習3-7_OBJ_注文のオブジェクト図
+object "高橋洋平" as customer1{
+名前 = 高橋洋平
+住所
+}
+
+object "髙田理恵" as customer2{
+名前 = 髙田理恵
+住所
+}
+
+object "テレビ（型式V12345)" as TV{
+    商品名 = テレビ
+    形式　= V12345
+}
+object "冷蔵庫" as refrigerator{
+    商品名　= 冷蔵庫 
+    形式　= R8765
+}
+
+object "プロジェクタ" as projector{
+    商品名　= プロジェクタ
+    形式 = P1122
+}
+
+object "高橋洋平テレビの注文" as order1{
+    注文日　= 11月21日
+    数量 = 2
+}
+object "高橋洋平冷蔵庫の注文" as order2{
+    注文日　= 11月21日
+    数量 = 1
+}
+
+object "髙田理恵の冷蔵庫の注文" as order3{
+    注文日 = 12月23日
+    数量　= 1
+}
+customer1 .. order1
+customer1 .. order2
+customer2 .. order3
+
+refrigerator .. order2
+refrigerator .. order3
+TV .. order1
+
+@enduml

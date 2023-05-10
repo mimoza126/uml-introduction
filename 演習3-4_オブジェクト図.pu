@@ -1,0 +1,25 @@
+@startuml 演習3-4-1　オブジェクト図
+left to right direction
+object "<u>車</u>" as car {
+車種
+メーカー
+駆動方式
+}
+object "<u>タイヤ1: タイヤ</u>" as tire1 {
+メーカー名
+}
+object "<u>タイヤ2: タイヤ</u>" as tire2 {
+メーカー名
+}
+object "<u>タイヤ3: タイヤ</u>" as tire3 {
+メーカー名
+}
+object "<u>タイヤ4: タイヤ</u>" as tire4 {
+メーカー名
+}
+
+car "1"--"1" tire1
+car "1"--"1" tire2
+car "1"--"1" tire3
+car "1"--"1" tire4
+@enduml
