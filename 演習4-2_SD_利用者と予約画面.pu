@@ -1,0 +1,17 @@
+@startuml 演習4-2_SD_利用者と予約画面
+hide footbox
+'actor 利用者 as user
+participant ":予約画面" as user
+participant ":ログインコントローラ" as reserve
+mainframe sd ログイン
+activate user
+user -> reserve:ログイン情報入力()
+note right of user : 非同期メッセージ
+activate reserve
+reserve -> reserve:ログインメッセージ取得()
+activate reserve
+note right of reserve : 再帰呼出し
+deactivate reserve
+
+
+@enduml
