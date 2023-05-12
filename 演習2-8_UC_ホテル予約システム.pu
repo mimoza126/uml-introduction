@@ -1,25 +1,25 @@
-@startuml ユースケース図
+@startuml ホテル予約システム
 left to right direction
-actor 利用者 #DDDDDD;line:black;line.bold;
-actor ホテル従業員 #DDDDDD;line:black;line.bold;
-actor ホテル管理者 #DDDDDD;line:black;line.bold;
-rectangle ホテル宿泊予約{
-    usecase 空室状況を閲覧する
-    usecase 予約する
-    usecase 予約の集計をする
-    usecase 空室状況を入力する
-    usecase 会員登録する
-    usecase ログインする
-    usecase (<u>キャンペーン価格</u>\nキャンペーン期間中であればキャンペーン価格) as input
+actor 利用者
+actor ホテル従業員
+actor ホテル管理者
+rectangle ホテル予約システム{
+usecase 空室状況を閲覧する
+usecase 空室状況を入力する
+usecase 予約の集計をする
+usecase システムにログインする
+usecase システムに会員登録する
+usecase (<u>ホテルの部屋を予約する</u>\n拡張点\nキャンペーン期間中) as input
+usecase 宿泊費がキャンペーン価格になる
 }
-予約する.>ログインする :<<include>>
-会員登録する <. ログインする
+ホテル従業員 <|- ホテル管理者
 利用者 --> 空室状況を閲覧する
-空室状況を入力する <-- ホテル従業員 
+利用者 --> input
+利用者 --> システムに会員登録する
+input <. 宿泊費がキャンペーン価格になる : <<extend>>
+システムにログインする <. input : << include >>
+ホテル従業員 --> 空室状況を入力する
+空室状況を入力する ..> システムにログインする : <<include>>
 ホテル管理者 --> 予約の集計をする
-(予約する)  <. input : <<extend>>
-空室状況を入力する ..> ログインする : <<include>>
-予約の集計をする ..> ログインする : <<include>>
-利用者-->予約する
-' ホテル管理者 --|>　ホテル従業員 
+予約の集計をする ..> システムにログインする : <<include>>
 @enduml
