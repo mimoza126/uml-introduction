@@ -1,0 +1,24 @@
+@startuml 演習4-3_SD_データ更新コントローラとホテルと予約
+hide footbox
+actor "利用者" as user 
+participant ":データ更新" as control
+participant ":ホテル" as hotel
+participant ":予約" as reserve
+mainframe sd 予約
+user -> control
+activate control
+control -> hotel:予約する
+activate hotel 
+hotel -> hotel:予約操作を呼び出す
+activate hotel
+
+hotel -> reserve:予約
+activate reserve
+
+deactivate control
+deactivate hotel
+deactivate reserve
+
+
+
+@enduml
