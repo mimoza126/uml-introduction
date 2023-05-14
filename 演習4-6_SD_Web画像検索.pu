@@ -1,0 +1,26 @@
+@startuml シーケンス図
+    hide footbox
+    Actor "ユーザ" as user
+    participant "ブラウザ" as browser
+    participant "Webサーバ-" as webserver
+    participant "画像サーバー" as imageserver
+
+    activate user
+    user -> browser : リンクボタンを押す
+
+        activate browser
+        browser -> webserver : 画像ファイル名を伝える
+
+            activate webserver
+            webserver -> imageserver : 画像ファイルを探す
+
+                opt 画像ファイル発見
+                    activate imageserver
+                    webserver <-- imageserver : 閲覧状態にする
+                    deactivate imageserver
+                end alt
+                    
+            browser <- webserver : 画像ファイル
+            deactivate webserver
+    user <- browser : 画像ファイルを再生する
+@enduml
