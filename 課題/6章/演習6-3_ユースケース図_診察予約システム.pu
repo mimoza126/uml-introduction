@@ -1,0 +1,18 @@
+@startuml 演習6-3_ユースケース図_診察予約システム
+left to right direction
+actor 利用者 as user #DDDDDD;line:black;line.bold;
+actor 看護師 as nurse #DDDDDD;line:black;line.bold;
+
+usecase メニュー as menu
+usecase 予約確認 as confirm
+usecase 貴方の順番 as order
+usecase 今の順番 as ordernow
+
+
+user --> menu
+user --> confirm
+user --> order
+user --> ordernow
+
+ordernow --> nurse
+@endumls
