@@ -1,0 +1,20 @@
+@startuml 演習6-4-2_ユースケース図_自動販売機
+left to right direction
+actor 客
+actor ベンダー
+rectangle 自動販売機{
+
+usecase 商品を出す
+usecase お金を入れる
+usecase ボタンを押す
+
+}
+
+客 --> お金を入れる
+お金を入れる .> ボタンを押す : <<include>>
+ボタンを押す .> 商品を出す : <<include>>
+
+ベンダー --> 商品を出す
+お金を入れる --> ベンダー
+
+@enduml

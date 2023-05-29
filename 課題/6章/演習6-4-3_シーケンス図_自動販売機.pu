@@ -1,0 +1,27 @@
+@startuml 演習6-4-3_シーケンス図_自動販売機
+hide footbox
+actor 客 as user
+participant "料金装置" as TollDevice
+participant "ボタン" as buton
+participant "ベンダー装置" as bender
+
+activate user
+user -> TollDevice : お金を入れる
+
+    activate TollDevice
+    TollDevice -> buton : ボタンを選ぶ
+
+        activate buton 
+        buton -> bender : ボタンを押す
+
+            activate bender
+            bender -> bender : ドリンクを探す
+            activate bender
+            deactivate bender
+            deactivate buton
+            deactivate TollDevice
+
+user <-- bender
+
+
+@enduml
