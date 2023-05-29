@@ -1,0 +1,23 @@
+@startuml 7章練習_ACカレーライス
+title カレーライスを作る
+start
+:材料を買う;
+:野菜を切る;
+
+fork
+    :肉を炒める;
+    :野菜を炒める;
+    :野菜を煮る;
+    :ルウを入れる;
+fork again
+    :米を洗う;
+    :米を炊く;
+end fork
+
+
+:ご飯にカレーを乗っける;
+:<color : Yellow> カレーライス ]
+stop
+
+
+@enduml
