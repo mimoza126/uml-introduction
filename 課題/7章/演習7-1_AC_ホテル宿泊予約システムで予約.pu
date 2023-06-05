@@ -1,0 +1,16 @@
+@startuml 演習7-1_AC_ホテル宿泊予約システムで予約
+start
+:ユーザはユーザ名入力;
+:ユーザはパスワード入力;
+if (認証成功) then (Yes)
+  :予約を実行;
+else (No)
+  :ユーザとパスワード再入力;
+  repeat
+    :ユーザ名入力;
+    :パスワード入力;
+  repeat while (認証成功);
+  :予約を実行;
+endif
+stop
+@enduml
